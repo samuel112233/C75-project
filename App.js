@@ -21,7 +21,7 @@ const TabNavigator = createBottomTabNavigator({
   defaultNavigationOptions: ({navigation})=>({
     tabBarIcon: ()=>{
       const routeName = navigation.state.routeName;
-      
+      console.log(routeName)
       if(routeName === "WriteStory"){
         return(
           <Image

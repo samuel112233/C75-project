@@ -39,8 +39,8 @@ export default class WriteStoryScreen extends React.Component {
                 <Header 
                     backgroundColor = {'pink'}
                     centerComponent = {{
-                        text : 'Story Hub',
-                        style : { color: 'black', fontSize: 30}
+                        text : 'Bed Time Stories',
+                        style : { color: 'white', fontSize: 20}
                     }}
                 />
                 <TextInput 
@@ -51,8 +51,7 @@ export default class WriteStoryScreen extends React.Component {
                         })
                     }}
                     value={this.state.title}
-                    style={styles.title}
-                    placeholderTextColor='black'/>
+                    style={styles.title}/>
                 <TextInput
                     placeholder="Author"
                     onChangeText= {(text)=>{
@@ -60,7 +59,6 @@ export default class WriteStoryScreen extends React.Component {
                             author: text
                         })
                     }}
-                    placeholderTextColor='black'
                     value={this.state.author}
                     style={styles.author} />
                 <TextInput 
@@ -70,17 +68,13 @@ export default class WriteStoryScreen extends React.Component {
                             storyText: text
                         })
                     }}
-                    placeholderTextColor='black'
                     value={this.state.storyText}
                     style={styles.storyText}
                     multiline={true}/>
                 
                 <TouchableOpacity
                     style={styles.submitButton}
-                    onPress = {()=>{
-                        this.submitStory()
-                    }}
-                   
+                    onPress={this.submitStory}
                    >
                     <Text style={styles.buttonText}>Submit</Text>
                 </TouchableOpacity>
@@ -98,34 +92,32 @@ const styles = StyleSheet.create({
       height: 40,
       borderWidth: 2,
       marginTop: 40,
-      margin: 10,
-      color:'black',
-      padding: 6,
+      padding: 10,
+      margin: 10
 
   },
   author: {
       height: 40,
       borderWidth: 2,
+      padding:10,
       margin: 10,
-       padding: 6,
   },
   storyText: {
       height: 250,
       borderWidth: 2,
       margin: 10, 
-      padding: 6,
+      padding:10
   },
   submitButton:{
       justifyContent: 'center',
       alignSelf: 'center',
       backgroundColor: 'pink',
       width: 80,
-      height: 40,color:'black',
+      height: 40
   },
   buttonText: {
       textAlign: 'center',
       color: 'white',
       fontWeight: 'bold',
-      color:'black',
   }
 });
